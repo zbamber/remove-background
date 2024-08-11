@@ -10,10 +10,10 @@
         align-items: center;
         justify-content: center;
         text-align: center;
+        background-image: url('assets/darkmode_checkerboard.png');
       }
 
       .drop-zone {
-        border: 2px dashed #ccc;
         padding: 20px;
         width: 80vw;
         height: 80vh;
@@ -22,24 +22,43 @@
         align-items: center;
         justify-content: center;
         cursor: pointer;
+        backdrop-filter: blur(4px);
+        border-radius: 5px;
+        /* border: 2px solid rgba(255, 255, 255, .2); */
+        border: 2px solid rgba(0, 0, 0, 1);
+      }
+
+      .text {
+        color: #fff;
+        border: 2px solid rgba(0, 0, 0, 1);
+        border-radius: 5px;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 1);
+        padding: 5px;
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+
+      .button {
+        color: #fff;
+        
       }
 
       .drop-zone.dragover {
-        background-color: #f0f0f0;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 1);
       }
     </style>
   </head>
   <body>
     <div id="dropZone" class="drop-zone">
-      <h1>rmbg</h1>
+      <h1 class="text">Remove Background</h1>
       <form
         id="uploadForm"
         action="/"
         method="post"
         enctype="multipart/form-data"
       >
-        <input id="fileInput" type="file" name="file" />
-        <input type="submit" value="rm" />
+        <input class="button" id="fileInput" type="file" name="file" />
+        <input class="button" type="submit" value="Remove" />
       </form>
     </div>
 
